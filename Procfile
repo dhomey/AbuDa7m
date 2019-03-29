@@ -1,0 +1,1 @@
+worker by bot.js
