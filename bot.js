@@ -80,4 +80,26 @@ client.on('message',async message => {
 });
 
 
+client.on('message', async msg =>{
+    var prefix = '§';//هنا البريفيكس
+    if (msg.author.bot) return undefined;
+    if (!msg.content.startsWith(prefix)) return undefined;
+   
+    let args = msg.content.split(' ');
+ 
+    let command = msg.content.toLowerCase().split(" ")[0];
+    command = command.slice(prefix.length)
+ 
+    if(command === `ping`) {//هنا الكوماند
+    let embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle("Your Ping!!")
+    .setDescription(`${client.ping} ms`)
+    .setFooter(`${msg.author.tag}`);
+    msg.delete().catch(O_o=>{})
+    msg.channel.send(embed);
+    }
+});//Alpha Codes_LioNDz
+
+
 client.login(process.env.BOT_TOKEN);
