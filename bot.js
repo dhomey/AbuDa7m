@@ -81,7 +81,7 @@ client.on('message',async message => {
 
 
 client.on('message', async msg =>{
-    var prefix = '§';//هنا البريفيكس
+    var prefix = '$';//هنا البريفيكس
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
    
